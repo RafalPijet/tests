@@ -7,6 +7,7 @@ button {
   display: inline-block;
   padding: 11px 50px;
   max-width: 100%;
+  margin-top: 50px;
 
   font-size: 16px;
   font-weight: 600;
@@ -31,4 +32,8 @@ button {
     color: #02ac46;
     background-color: #fff;
   }
+}
+
+#info-field {
+  margin-top: 100px;
 }
