@@ -10,11 +10,16 @@
         var number = parseInt(window.prompt("Enter the temperature"));
 
         if (isNaN(number)) {
-            isFirst ? outputC.innerHTML = answerError : outputF.innerHTML = answerError;
+
+            if (isFirst) {
+                outputC.innerHTML = answerError;
+                } else {
+                outputF.innerHTML = answerError;
+            }
             return null;
-        } else {
-            return number;
-        }
+            } else {
+                return number;
+            }
     }
     var convertCtoF = function(number) {
 
@@ -29,8 +34,14 @@
         }
     }
     var selectInfo = function(temp, char) {
-        return char == "C" && temp <= 0 || char == "F" && temp <= 32 ? "The water is frozen. Put on a warm jacket, hat and scarf. You can go skiing" : char == "C" && temp >= 0 && temp < 100 || char == "F" && temp >= 32 && temp < 213 ? "The water is liquid. You do not have to be warmly dressed. You can ride a bike" : "The water is in the form of water vapor. Watch out because you're getting burned. You can make yourself a cup of tea";
 
+        if ((char == "C") && (temp <= 0) || (char == "F") && (temp <= 32)) {
+            return "The water is frozen. Put on a warm jacket, hat and scarf. You can go skiing";
+        } else if ((char == "C") && (temp >= 0) && (temp < 100) || (char == "F") && (temp >= 32) && (temp < 213)) {
+            return "The water is liquid. You do not have to be warmly dressed. You can ride a bike";
+        } else {
+            return "The water is in the form of water vapor. Watch out because you're getting burned. You can make yourself a cup of tea";
+        }
     }
     var showInfo = function(text, tempC, tempF) {
         info.innerHTML =  "(Temperature " + tempC + " Celsius degrees = " + tempF + " Fahrenheit degrees) --> " + text + "<br><br>" + info.innerHTML;
