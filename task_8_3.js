@@ -6,6 +6,7 @@
     var buttonF = document.getElementById("greeter-buttonF");
     var info = document.getElementById("info-field");
     var answerError = "Error!!! You must enter number";
+
     var validation = function(isFirst) {
         var number = parseInt(window.prompt("Enter the temperature"));
 
@@ -21,18 +22,21 @@
                 return number;
             }
     }
+
     var convertCtoF = function(number) {
 
         if (number != null) {
             return Math.round(number * 1.8 + 32);
         }
     }
+
     var convertFtoC = function(number) {
 
         if (number != null) {
             return Math.round((number - 32) / 2 * 1.1);
         }
     }
+
     var selectInfo = function(temp, char) {
 
         if ((char == "C" && temp < 0) || (char == "F" && temp < 32)) {
@@ -43,6 +47,7 @@
             return "The water is in the form of water vapor. Watch out because you're getting burned. You can make yourself a cup of tea";
         }
     }
+
     var showInfo = function(text, tempC, tempF) {
         info.innerHTML =  "(Temperature " + tempC + " Celsius degrees = " + tempF + " Fahrenheit degrees) --> " + text + "<br><br>" + info.innerHTML;
     }
