@@ -35,9 +35,9 @@
     }
     var selectInfo = function(temp, char) {
 
-        if ((char == "C") && (temp <= 0) || (char == "F") && (temp <= 32)) {
+        if ((char == "C" && temp < 0) || (char == "F" && temp < 32)) {
             return "The water is frozen. Put on a warm jacket, hat and scarf. You can go skiing";
-        } else if ((char == "C") && (temp >= 0) && (temp < 100) || (char == "F") && (temp >= 32) && (temp < 213)) {
+        } else if ((char == "C" && temp >= 0 && temp < 100) || (char == "F" && temp >= 32 && temp < 213)) {
             return "The water is liquid. You do not have to be warmly dressed. You can ride a bike";
         } else {
             return "The water is in the form of water vapor. Watch out because you're getting burned. You can make yourself a cup of tea";
@@ -73,8 +73,3 @@
         }
     });
 })();
-
-
-
-
-
